@@ -1,11 +1,15 @@
-mod handlers;
-mod model;
-mod routes;
+use axum::{
+    routing::{get, post},
+    Router,
+};
 
 #[tokio::main]
 async fn main() {
-    let routes = routes::routes();
+    // initialize tracing
+    // tracing_subscriber::fmt::init();
 
-    println!("Server started at http://localhost:8000");
-    warp::serve(routes).run(([127, 0, 0, 1], 8000)).await;
+    // run our app with hyper, listening globally on port 3000
+    // let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    // println!("Server run on http://localhost:3000");
+    // axum::serve(listener, app).await.unwrap();
 }
