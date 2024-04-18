@@ -1,5 +1,4 @@
-use super::models::Post;
-use warp::Filter;
+use crate::model::Post;
 
 // A function to handle GET requests at /posts/{id}
 pub async fn get_post(id: u64) -> Result<impl warp::Reply, warp::Rejection> {
